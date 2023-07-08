@@ -22,7 +22,7 @@ const Navbar = ({ navBarItems, currentSection }) => {
             {
                 navBarItems.map((e, i) => (
                     <div
-                        key={`nav-${e}-${i}`}
+                        key={`nav-${e.sectionId}-${i}`}
                         onClick={() => handleClick(e.sectionId)}
                         onMouseEnter={() => setIsMouseEnter({ [e.title]: true })}
                         onMouseLeave={() => setIsMouseEnter({ [e.title]: false })}
