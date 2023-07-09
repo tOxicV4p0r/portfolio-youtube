@@ -40,7 +40,7 @@ const ContentContainer = ({
                     picture = "",
                 }, index) => (
                     <div
-                        key={`${SECTION_ID}-${index}-${title.replaceAll(" ", "")}`}
+                        key={`${SECTION_ID}-${index}`}
                         className={`grid grid-cols-[25%_75%] rounded-md px-2 py-6 transition-al ${isMouseEnter[`${SECTION_ID}-${index}`] ? "bg-primaryBase" : ""}`}
                         onMouseEnter={() => setIsMouseEnter({ [`${SECTION_ID}-${index}`]: true })}
                         onMouseLeave={() => setIsMouseEnter({ [`${SECTION_ID}-${index}`]: false })}
@@ -57,7 +57,7 @@ const ContentContainer = ({
                                     < div className="flex gap-4 text-xl items-center">
                                         {
                                             materials.map((e, i) => (
-                                                <Material key={`${e}-material-${i}`} icon={e.type} link={e.link} />
+                                                <Material key={`material-${i}`} icon={e.type} link={e.link} />
                                             ))
                                         }
                                     </div>
@@ -65,12 +65,12 @@ const ContentContainer = ({
                             }
                             {
                                 descriptions.map((e, i) => (
-                                    <Description key={`${e}-description-${i}`} description={e} />
+                                    <Description key={`description-${i}`} description={e} />
                                 ))
                             }
                             {
                                 skills.map((e, i) => (
-                                    <Tech key={`${e}-skill-${i}`} isHighLight={isMouseEnter[`${SECTION_ID}-${index}`]} data={e} />
+                                    <Tech key={`skill-${i}`} isHighLight={isMouseEnter[`${SECTION_ID}-${index}`]} data={e} />
                                 ))
                             }
                         </div>
